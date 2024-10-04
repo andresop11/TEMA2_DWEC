@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../funciones_T2.js"></script>
+</head>
+<body>
+    <script>
+        var dia =new Date(); 
+
+        /*.padStar(2,0) hace que la cadena tenga minimo 2 caracteres, para que si el numero es inferior a 10
+        salga un 0 delante, y para ello debes convertir primero las variables a String sino no es posible
+        */
+        var hora= dia.getHours().toString().padStart(2, '0');
+        var minuto = dia.getMinutes().toString().padStart(2, '0'); 
+        var segundos= dia.getSeconds().toString().padStart(2, '0');
+
+        console.log(hora + ":" + minuto + ":" + segundos); 
+
+        console.log("Son las " + hora + "h y " + minuto + "m"); 
+
+    </script>
+</body>
+</html>

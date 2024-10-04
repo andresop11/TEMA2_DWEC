@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../funciones_T2.js"></script>
+</head>
+
+<body>
+    <script>
+        var opcion = parseInt(prompt("Introduce una opción:\n1. Potencia\n2. Raíz\n3. Logaritmo\n4. Trigonometría"));
+
+        switch (opcion) {
+            case 1:
+
+                let base = parseInt(prompt("Introduceme el numero que será la base"));
+                let exponente = parseInt(prompt("Introduceme el numero que sera el exponente"));
+
+                console.log("La potencia de " + base + " elevado a " + exponente + " es: " + Math.pow(base, exponente));
+                break; 
+            case 2:
+
+                let numero = parseInt(prompt("Introduceme un numero que no sea negativo"));
+
+                console.log("La raiz de " + numero + " es : " + Math.sqrt(numero));
+                break; 
+
+            case 3:
+
+                let decimal = parseFloat(prompt("Introduceme un numero que sea decimal"));
+                
+                console.log("Redondeo mas proximo de  " + decimal + " : " + Math.round(decimal));
+                console.log("Redondeo al alza de " + decimal + " : " + Math.ceil(decimal));
+                console.log("Redondeo a la baja de " + decimal + " : " + Math.floor(decimal));
+                break; 
+
+                case 4: 
+
+                let angulo=parseFloat(prompt("Introduceme un angulo de 0 a 360 grados")); 
+
+                console.log("Seno del angulo " + angulo + "º : " + Math.sin(angulo)); 
+                console.log("Coseno del angulo " + angulo + "º : " + Math.cos(angulo)); 
+                console.log("Tangente del angulo " + angulo + "º : " + Math.tan(angulo)); 
+                break; 
+
+                default: 
+
+                console.log("No has introducido ningun numero que sea del 1 al 4 "); 
+                break; 
+        }
+    </script>
+
+</body>
+
+</html>

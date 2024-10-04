@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../funciones_T2.js"></script>
+</head>
+
+<body>
+    <script>
+        let continuar = true;
+
+        while (continuar) {
+            let cat1 = parseInt(prompt("Introduceme el valor del primer cateto"));
+            let cat2 = parseInt(prompt("Introduceme el valor del segundo cateto"));
+
+            let hipotenusa = getHipotenusa(cat1, cat2);
+            console.log("El valor de la hipotenusa es: " + hipotenusa);
+
+            // Preguntar al usuario si quiere continuar
+            let respuesta = prompt("¿Deseas calcular otra hipotenusa? (si/no)");
+            if (respuesta.toLowerCase() !== 'si') {
+                continuar = false; // Salir del bucle si la respuesta no es 'si'
+            }
+        }
+
+        console.log("Estas son todas las hipotenusas que has calculado.");
+    </Script>
+</body>
+
+</html>

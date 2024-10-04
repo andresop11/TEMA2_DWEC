@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../funciones_T2.js"></script>
+</head>
+<body>
+    <script>
+        let frase=prompt("Introduceme una frase para contar las vocales"); 
+
+        let frase2=frase.toLowerCase(); 
+
+        let a=0; 
+        let e=0; 
+        let i=0;
+        let o=0; 
+        let u=0; 
+        let x=0; 
+        for (x=0; x<=frase2.length; x++){
+
+            if (frase[x]==="a"){
+                 a++; 
+            }
+            if (frase[x]==="e"){
+                e++; 
+            }
+            if (frase[x]==="i"){
+                i++; 
+            }
+            if (frase[x]==="o"){
+                o++; 
+            }
+            if (frase[x]==="u"){
+                u++; 
+            }
+        }
+
+        console.log("La letra A aparece " + a + " veces");
+        console.log("La letra E aparece " + e + " veces");
+        console.log("La letra I aparece " + i + " veces");
+        console.log("La letra O aparece " + o + " veces");
+        console.log("La letra U aparece " + u + " veces");
+
+        </script>
+</body>
+</html>

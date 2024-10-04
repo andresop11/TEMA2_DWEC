@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../funciones_T2.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 50%;
+            background-color: #fff;
+        }
+        table, th, td {
+            border: 1px solid black;
+            
+        }
+    </style>
+</head>
+<body>
+    
+    <table id="tablaSeno">
+        <thead>
+            <tr>
+                <th>Número</th>
+                <th>Seno</th>
+            </tr>
+        </thead>
+        <tbody>
+        <!-- Las filas se generarán aquí poco a poco -->
+        </tbody>
+    </table>
+
+    <script>
+        // Obtener referencia al cuerpo de la tabla
+        const cuerpoTabla = document.querySelector('#tablaSeno tbody');
+
+        
+        // Generar la tabla al cargar la página
+        generarTablaSeno();
+    </script>
+    </script>
+</body>
+</html>

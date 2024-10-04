@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+    function Reloj() {
+    // Función para actualizar el reloj
+    function actualizarReloj() {
+        const fechaActual = new Date(); // Obtener la fecha y hora actual
+        const horas = String(fechaActual.getHours()).padStart(2, '0'); // Obtener horas
+        const minutos = String(fechaActual.getMinutes()).padStart(2, '0'); // Obtener minutos
+        const segundos = String(fechaActual.getSeconds()).padStart(2, '0'); // Obtener segundos
+        
+        // Mostrar el tiempo en formato HH:MM:SS
+        console.log(horas + ":" + minutos + ":" + segundos);
+    }
+    // Actualizar el reloj cada segundo
+    setInterval(actualizarReloj, 1000); // 1000 milisegundos = 1 segundo
+
+    // Llamar a la función una vez para mostrar el tiempo inmediatamente
+    actualizarReloj();
+    }
+
+    Reloj(); 
+
+    </script>
+    
+</body>
+</html>

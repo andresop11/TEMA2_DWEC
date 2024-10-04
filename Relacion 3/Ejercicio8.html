@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h3>Imagen aleatoria: </h3>
+    <img id="imagenAleatoria" src="" alt="Imagen aleatoria">
+
+
+    <script>
+
+        const imagenes = [
+            'Imagenes/imagen1.jpg', // Ruta de la primera imagen
+            'Imagenes/imagen2.jpeg', // Ruta de la segunda imagen
+            'Imagenes/imagen3.jpg'  // Ruta de la tercera imagen 
+        ];
+
+        function mostrarImagenAleatoria() {
+            // Obtener un índice aleatorio
+            const indiceAleatorio = Math.floor(Math.random() * imagenes.length);
+            // Asignar la imagen seleccionada al elemento <img>
+            document.getElementById('imagenAleatoria').src = imagenes[indiceAleatorio];
+        }
+
+        // Ejecutar la función al cargar la página
+        window.onload = mostrarImagenAleatoria;
+        
+    </script>
+
+</body>
+
+</html>
