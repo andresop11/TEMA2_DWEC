@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="../funciones_T2.js"></script>
+</head>
+
+<body>
+    <script>
+        console.log(validateCreditCard2("9999-7777-8888-0000")); // true
+        console.log(validateCreditCard2("6666-6666-6666-1666")); // true
+        console.log(validateCreditCard2("a923-3211-9c01-1112")); // false
+        console.log(validateCreditCard2("4444-4444-4444-4444")); // false
+        console.log(validateCreditCard2("1111-1111-1111-1110")); // false
+        console.log(validateCreditCard2("6666-6666-6666-6661")); // false
+
+        console.log(validateCreditCard2("9999777788880000")); // true
+        console.log(validateCreditCard2("6666666666661666")); // true
+
+    </script>
+</body>
