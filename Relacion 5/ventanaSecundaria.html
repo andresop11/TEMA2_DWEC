@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana Secundaria</title>
+</head>
+
+<body>
+    <p id="parrafo"></p> <!-- Aquí se mostrará el mensaje que se recibe -->
+    <script>
+        // Función para recibir un mensaje y mostrarlo en el párrafo
+        function recibeMensaje(texto) {
+            var objeto = document.getElementById("parrafo"); // Obtener el elemento por su ID
+            objeto.innerHTML = texto; // Establecer el contenido del párrafo al texto recibido
+        }
+
+        // Función para cerrar la ventana
+        function cerrarse() {
+            window.close(); // Cerrar la ventana secundaria
+        }
+    </script>
+    <button onclick="cerrarse()">Cerrar</button> <!-- Botón para cerrar la ventana -->
+</body>
+
+</html>

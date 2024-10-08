@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ventana con título</title>
+</head>
+<body>
+
+    <h1>Generador de ventana con título</h1>
+
+    <!-- Botón para solicitar el título y abrir la ventana -->
+    <button onclick="abrirVentana()">Abrir ventana</button>
+    <!-- Botón para cerrar la ventana -->
+    <button onclick="cerrarVentana()">Cerrar ventana</button>
+
+    <script>
+        let nuevaVentana; // Variable para almacenar la referencia a la ventana secundaria
+
+        // Función para abrir la ventana con el título ingresado
+        function abrirVentana() {
+            // Solicitar el título al usuario
+            let titulo = prompt("Escribe un título para la nueva ventana:");
+
+            // Configurar las características de la nueva ventana
+            let opciones = "width=500,height=400,top=0,left=" + (screen.width - 500);
+
+            // Abrir la nueva ventana
+            nuevaVentana = window.open("", "NuevaVentana", opciones);
+
+            // Escribir el título en la nueva ventana
+            nuevaVentana.document.write("<h1>" + titulo + "</h1>");
+        }
+
+        // Función para cerrar la ventana secundaria
+        function cerrarVentana() {
+            if (nuevaVentana) {
+                nuevaVentana.close(); // Cerrar la ventana si está abierta
+            }
+        }
+    </script>
+
+</body>
+</html>

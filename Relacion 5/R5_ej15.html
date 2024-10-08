@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Redireccionando...</title>
+    <script>
+        function redireccionar() {
+            let segundos = 5; // Empezamos en 5 segundos
+
+            // Hacemos la cuenta atrás
+            setInterval(function() {
+                document.body.innerHTML = `
+                    <h1>Hemos cambiado de ubicación esta página.</h1>
+                    <p>Serás redirigido en ${segundos} segundos...</p>
+                `; // Actualizamos todo el contenido del body
+
+                segundos--; // Restamos 1 segundo
+
+                // Cuando llegue a 0, redirigimos
+                if (segundos < 0) {
+                    window.location.href = "http://www.pccomponentes.com";
+                }
+            }, 1000); // Esto pasa cada 1 segundo que son 1000 milisegundos
+        }
+    </script>
+</head>
+<body onload="redireccionar()">
+</body>
+</html>

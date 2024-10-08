@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gestión de Ventanas</title>
+</head>
+
+<body>
+    <button onclick="abrirVentana()">Abrir Ventana</button>
+    <button onclick="cerrarVentanaSecundaria()">Cerrar Ventana Secundaria</button>
+    <button onclick="enviarMensaje()">Enviar Mensaje</button> <!-- Nuevo botón -->
+
+    <script>
+        let nuevaVentana = null;
+
+        function abrirVentana() {
+            // Abrir ventana
+            if (nuevaVentana === null || nuevaVentana.closed) {
+                nuevaVentana = window.open("ventanasecundaria.html", "NuevaVentana", "width=500,height=400");
+            } else {
+                // Si ya está abierta, solo la trae al frente
+                nuevaVentana.focus();
+            }
+        }
+
+        function cerrarVentanaSecundaria() {
+            if (nuevaVentana && !nuevaVentana.closed) {
+                nuevaVentana.close();
+            } else {
+                alert("La ventana secundaria no está abierta.");
+            }
+        }
+
+        function enviarMensaje() {
+            // Comprobar si la ventana secundaria está abierta
+            if (nuevaVentana && !nuevaVentana.closed) {
+                nuevaVentana.recibeMensaje("¡Hola desde la ventana principal!"); // Enviar mensaje
+            } else {
+                alert("La ventana secundaria no está abierta.");
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Generar Ventanas Emergentes</title>
+</head>
+<body>
+    <h1 style="cursor: pointer;" onclick="abrirVentanas()">Haz clic aquí</h1>
+
+    <script>
+        function abrirVentanas() {
+            for (let i = 1; i <= 5; i++) {
+                // Abre una nueva ventana emergente
+                let ventana = window.open("", "Ventana" + i, "width=350,height=350");
+                // Escribe el contenido de la ventana
+                ventana.document.write(`
+                    <h2>Ventana ${i}</h2>
+                    <button onclick="window.close()">Cerrar</button>
+                `);
+                ventana.document.close(); // Cierra el documento para finalizar la escritura
+            }
+        }
+    </script>
+</body>
+</html>
