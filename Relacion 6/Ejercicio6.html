@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Anclas, Imágenes y Enlaces</title>
+</head>
+<body>
+
+    <h1>Página con Anclas, Imágenes y Enlaces</h1>
+
+    <!-- Anclas de ejemplo -->
+    <a name="ancla1" href="#">Ancla 1</a><br>
+    <a name="ancla2" href="#">Ancla 2</a><br>
+    <a name="ancla3" href="#">Ancla 3</a><br>
+
+    <!-- Imágenes de ejemplo -->
+    <img id="imagen1" src="https://via.placeholder.com/150" alt="Imagen 1">
+    <img id="imagen2" src="https://via.placeholder.com/150" alt="Imagen 2">
+    <img id="imagen3" src="https://via.placeholder.com/150" alt="Imagen 3">
+
+    <!-- Enlaces de ejemplo -->
+    <a href="https://www.google.com" target="_blank">Ir a Google</a><br>
+    <a href="https://www.bing.com" target="_blank">Ir a Bing</a><br>
+    <a href="https://www.yahoo.com" target="_blank">Ir a Yahoo</a><br>
+
+    <!-- Enlaces solicitados con funcionalidad JavaScript -->
+    <h2>Enlaces con Funciones JavaScript</h2>
+
+    <!-- a) Muestra el número de anclas en el documento -->
+    <a href="#" onclick="showAnchorCount()">Mostrar número de anclas</a><br><br>
+
+    <!-- b) Muestra el texto dentro del tag del primer ancla (innerHTML) -->
+    <a href="#" onclick="showFirstAnchorText()">Mostrar texto del primer ancla</a><br><br>
+
+    <!-- c) Muestra el número de imágenes en el documento -->
+    <a href="#" onclick="showImageCount()">Mostrar número de imágenes</a><br><br>
+
+    <!-- d) Muestra el id de la primera imagen -->
+    <a href="#" onclick="showFirstImageID()">Mostrar ID de la primera imagen</a><br><br>
+
+    <!-- e) Muestra el número de enlaces en el documento -->
+    <a href="#" onclick="showLinkCount()">Mostrar número de enlaces</a><br><br>
+
+    <!-- f) Cambia el título del documento -->
+    <a href="#" onclick="changeDocumentTitle()">Cambiar título del documento</a><br><br>
+
+    <script>
+        // a) Muestra el número de anclas en el documento
+        function showAnchorCount() {
+            alert('Número de anclas: ' + document.anchors.length);
+        }
+
+        // b) Muestra el texto dentro del tag del primer ancla (innerHTML)
+        function showFirstAnchorText() {
+            if (document.anchors.length > 0) {
+                alert('Texto del primer ancla: ' + document.anchors[0].innerHTML);
+            } else {
+                alert('No hay anclas en el documento.');
+            }
+        }
+
+        // c) Muestra el número de imágenes en el documento
+        function showImageCount() {
+            alert('Número de imágenes: ' + document.images.length);
+        }
+
+        // d) Muestra el id de la primera imagen
+        function showFirstImageID() {
+            if (document.images.length > 0) {
+                alert('ID de la primera imagen: ' + document.images[0].id);
+            } else {
+                alert('No hay imágenes en el documento.');
+            }
+        }
+
+        // e) Muestra el número de enlaces en el documento
+        function showLinkCount() {
+            alert('Número de enlaces: ' + document.links.length);
+        }
+
+        // f) Cambia el título del documento
+        function changeDocumentTitle() {
+            const newTitle = prompt('Introduce el nuevo título del documento:');
+            if (newTitle) {
+                document.title = newTitle;
+                alert('El título ha sido cambiado a: ' + document.title);
+            }
+        }
+    </script>
+
+</body>
+</html>

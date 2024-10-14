@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Enlaces y Documento con JavaScript</title>
+</head>
+<body>
+
+    <h1>Página con Funciones JavaScript</h1>
+
+    <!-- Enlace para mostrar la fecha de la última actualización -->
+    <a href="#" onclick="showLastModified()">Mostrar última actualización</a>
+    <br><br>
+
+    <!-- Enlace para mostrar la URL desde la cual se activó el enlace anterior -->
+    <a href="#" onclick="showReferrer()">Mostrar URL de referencia</a>
+    <br><br>
+
+    <!-- Enlace para mostrar el título del documento -->
+    <a href="#" onclick="showDocumentTitle()">Mostrar título del documento</a>
+    <br><br>
+
+    <!-- Enlace para mostrar la URL completa del documento -->
+    <a href="#" onclick="showFullURL()">Mostrar URL completa</a>
+    <br><br>
+
+    <!-- Ejemplos de escritura en el documento -->
+    <h2>Demostración de escritura en el documento</h2>
+    <button onclick="writeBeforeLoad()">Escribir antes de que termine de cargar</button>
+    <br><br>
+    <button onclick="writeAfterLoad()">Escribir después de que termine de cargar</button>
+
+    <script>
+        // a) Mostrar la fecha de la última actualización del documento
+        function showLastModified() {
+            alert('Fecha de la última actualización: ' + document.lastModified);
+        }
+
+        // b) Mostrar la URL desde la cual se activó el enlace que llevó al usuario hasta el documento actual
+        function showReferrer() {
+            alert('URL de referencia: ' + document.referrer);
+        }
+
+        // c) Mostrar el título del documento actual
+        function showDocumentTitle() {
+            alert('El título del documento es: ' + document.title);
+        }
+
+        // d) Mostrar la URL completa del documento actual
+        function showFullURL() {
+            alert('La URL completa es: ' + window.location.href);
+        }
+
+        // e) Escribir en el documento antes de que termine de cargar (sin sobreescribir el contenido)
+        function writeBeforeLoad() {
+            // Abre el documento sin sobrescribir
+            document.write("Esto se escribió antes de que terminara de cargarse el documento.<br>");
+        }
+
+        // Escribir después de que el documento haya cargado (esto sobreescribirá todo el contenido)
+        function writeAfterLoad() {
+            setTimeout(function() {
+                document.open();
+                document.write("Todo el contenido ha sido sobreescrito porque escribimos después de la carga.<br>");
+                document.close();
+            }, 1000); // Espera 1 segundo antes de sobreescribir para demostrar el proceso
+        }
+    </script>
+
+</body>
+</html>

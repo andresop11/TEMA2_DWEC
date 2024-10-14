@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información del Navegador</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+        th, td {
+            padding: 12px;
+            text-align: left;
+        }
+        th {
+            background-color: #e09e9e;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Información del Navegador Cliente</h2>
+
+    <table id="browserInfoTable">
+        <thead>
+            <tr>
+                <th>Atributo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Nombre del Navegador</td>
+                <td id="nombreNavegador"></td>
+            </tr>
+            <tr>
+                <td>Versión del Navegador</td>
+                <td id="versionNavegador"></td>
+            </tr>
+            <tr>
+                <td>Sistema Operativo</td>
+                <td id="SO"></td>
+            </tr>
+            <tr>
+                <td>Idioma del Navegador</td>
+                <td id="idiomaNavegador"></td>
+            </tr>
+            <tr>
+                <td>Plataforma</td>
+                <td id="plataforma"></td>
+            </tr>
+            <tr>
+                <td>Resolución de Pantalla</td>
+                <td id="resolucion"></td>
+            </tr>
+            <tr>
+                <td>Profundidad de Color</td>
+                <td id="colorDepth"></td>
+            </tr>
+            <tr>
+                <td>Online</td>
+                <td id="onlineStatus"></td>
+            </tr>
+            <tr>
+                <td>Cookies Habilitadas</td>
+                <td id="cookiesEnabled"></td>
+            </tr>
+            <tr>
+                <td>Agente de Usuario (User Agent)</td>
+                <td id="userAgent"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Obtener información del navegador mediante JavaScript
+        document.getElementById("nombreNavegador").textContent = navigator.appName;
+        document.getElementById("versionNavegador").textContent = navigator.appVersion;
+        document.getElementById("SO").textContent = navigator.platform;
+        document.getElementById("idiomaNavegador").textContent = navigator.language || navigator.userLanguage;
+        document.getElementById("plataforma").textContent = navigator.platform;
+        document.getElementById("resolucion").textContent = `${screen.width} x ${screen.height}`;
+        document.getElementById("colorDepth").textContent = screen.colorDepth + " bits";
+        document.getElementById("onlineStatus").textContent = navigator.onLine ? "Sí" : "No";
+        document.getElementById("cookiesEnabled").textContent = navigator.cookieEnabled ? "Sí" : "No";
+        document.getElementById("userAgent").textContent = navigator.userAgent;
+    </script>
+
+</body>
+</html>
+
+</body>
+</html>

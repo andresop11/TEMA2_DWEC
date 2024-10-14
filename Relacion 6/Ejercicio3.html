@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prueba de Ventanas</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        a {
+            display: block;
+            margin: 10px 0;
+            color: blue;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+    </style>
+    <script>
+        let ventanaNueva; // Variable para la nueva ventana
+
+        // a) Ventana de confirmación
+        function mostrarConfirmacion() {
+            const opcion = confirm("¿Estás seguro de que deseas continuar?");
+            alert("Opción pulsada: " + (opcion ? "Aceptar" : "Cancelar"));
+        }
+
+        // b) Analiza si la ventana está cerrada
+        function abrirVentana() {
+            ventanaNueva = window.open("", "Nueva Ventana", "width=300,height=100");
+            ventanaNueva.document.write("<p>Esta ventana puede cerrarse.</p>");
+            ventanaNueva.document.write('<button onclick="window.close()">Cerrar ventana</button>');
+            ventanaNueva.onbeforeunload = function() {
+                alert("La ventana se ha cerrado.");
+            };
+        }
+
+        // c) Pide un nuevo nombre para la ventana
+        function renombrarVentana() {
+            const nuevoNombre = prompt("Introduce un nuevo nombre para la ventana:");
+            if (ventanaNueva) {
+                ventanaNueva.name = nuevoNombre;
+                alert("La ventana ha sido renombrada a: " + nuevoNombre);
+            } else {
+                alert("No hay ninguna ventana abierta.");
+            }
+        }
+
+        // d) Cierra la ventana actual y la ventana abierta
+        function cerrarVentanaActual() {
+            window.close();
+        }
+
+        function cerrarVentanaNueva() {
+            if (ventanaNueva) {
+                ventanaNueva.close();
+                alert("La ventana nueva ha sido cerrada.");
+            } else {
+                alert("No hay ninguna ventana nueva abierta.");
+            }
+        }
+
+        // f) Abre una ventana que se puede cambiar de tamaño
+        function abrirVentanaRedimensionable() {
+            ventanaNueva = window.open("", "Ventana Redimensionable", "width=300,height=100,resizable");
+            ventanaNueva.document.write("<p>Puedes redimensionar esta ventana.</p>");
+        }
+
+        // g) Escribir texto en la página padre
+        function escribirEnPaginaPadre() {
+            if (ventanaNueva) {
+                ventanaNueva.document.write("<p>Texto añadido desde la ventana padre.</p>");
+            } else {
+                alert("Primero abre la ventana redimensionable.");
+            }
+        }
+
+        // h) Mueve la ventana 50 píxeles hacia abajo y hacia la derecha
+        function moverVentana() {
+            if (ventanaNueva) {
+                ventanaNueva.moveBy(50, 50);
+            } else {
+                alert("No hay ninguna ventana abierta.");
+            }
+        }
+
+        // i) Mueve la ventana a una posición concreta
+        function moverVentanaPosicion() {
+            if (ventanaNueva) {
+                ventanaNueva.moveTo(100, 100); // Mueve a la posición (100, 100)
+            } else {
+                alert("No hay ninguna ventana abierta.");
+            }
+        }
+
+        // j) Desplaza la barra de desplazamiento 10 píxeles hacia abajo
+        function desplazarScroll() {
+            window.scrollBy(0, 10);
+        }
+
+        // k) Desplaza la barra de desplazamiento a una posición determinada
+        function desplazarScrollPosicion() {
+            window.scrollTo(0, 100); // Desplaza a la posición (0, 100)
+        }
+    </script>
+</head>
+<body>
+    <h1>Funciones de Ventana</h1>
+    <a href="#" onclick="mostrarConfirmacion()">a) Ventana de Confirmación</a>
+    <a href="#" onclick="abrirVentana()">b) Abrir Ventana y Analizar si Está Cerrada</a>
+    <a href="#" onclick="renombrarVentana()">c) Renombrar Ventana</a>
+    <a href="#" onclick="cerrarVentanaActual()">d) Cerrar Ventana Actual</a>
+    <a href="#" onclick="cerrarVentanaNueva()">d) Cerrar Ventana Nueva</a>
+    <a href="#" onclick="abrirVentanaRedimensionable()">f) Abrir Ventana Redimensionable</a>
+    <a href="#" onclick="escribirEnPaginaPadre()">g) Escribir en Página Padre</a>
+    <a href="#" onclick="moverVentana()">h) Mover Ventana 50 píxeles</a>
+    <a href="#" onclick="moverVentanaPosicion()">i) Mover Ventana a Posición (100, 100)</a>
+    <a href="#" onclick="desplazarScroll()">j) Desplazar Scroll 10 píxeles Abajo</a>
+    <a href="#" onclick="desplazarScrollPosicion()">k) Desplazar Scroll a Posición (0, 100)</a>
+</body>
+</html>

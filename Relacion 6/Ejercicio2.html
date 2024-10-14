@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de la Pantalla</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 5px;
+            text-align: left;
+        }
+        th {
+            background-color: #00ffbf;
+        }
+        h2 {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <h2>Información de la Pantalla</h2>
+
+    <table id="screenInfoTable">
+        <thead>
+            <tr>
+                <th>Atributo</th>
+                <th>Valor</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Resolución de Pantalla</td>
+                <td id="screenResolution"></td>
+            </tr>
+            <tr>
+                <td>Profundidad de Color</td>
+                <td id="colorDepth"></td>
+            </tr>
+            <tr>
+                <td>Altura de la Pantalla</td>
+                <td id="screenHeight"></td>
+            </tr>
+            <tr>
+                <td>Ancho de la Pantalla</td>
+                <td id="screenWidth"></td>
+            </tr>
+            <tr>
+                <td>Orientación de la Pantalla</td>
+                <td id="screenOrientation"></td>
+            </tr>
+            <tr>
+                <td>Escala de Pantalla</td>
+                <td id="screenScale"></td>
+            </tr>
+            <tr>
+                <td>Disponibilidad de Pantalla Táctil</td>
+                <td id="touchEnabled"></td>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // Obtener información de la pantalla mediante JavaScript
+        document.getElementById("screenResolution").textContent = `${screen.width} x ${screen.height}`;
+        document.getElementById("colorDepth").textContent = `${screen.colorDepth} bits`;
+        document.getElementById("screenHeight").textContent = screen.height + " píxeles";
+        document.getElementById("screenWidth").textContent = screen.width + " píxeles";
+        document.getElementById("screenOrientation").textContent = 
+            window.matchMedia("(orientation: portrait)").matches ? "Vertical" : "Horizontal";
+        document.getElementById("screenScale").textContent = window.devicePixelRatio ? window.devicePixelRatio : "1";
+        document.getElementById("touchEnabled").textContent = 
+            "ontouchstart" in window ? "Sí" : "No";
+    </script>
+
+</body>
+</html>

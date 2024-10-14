@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo de Enlaces con JavaScript</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .marker {
+            margin-top: 1000px; /* Para simular desplazamiento */
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Página de Enlaces con Funcionalidad JavaScript</h1>
+
+    <!-- Enlace para desplazarse a un marcador -->
+    <a href="#marker" id="goToMarker">Ir al marcador</a>
+    <br><br>
+
+    <!-- Enlace para mostrar el nombre del host -->
+    <a href="#" onclick="showHost()">Mostrar nombre del host</a>
+    <br><br>
+
+    <!-- Enlace para mostrar la URL completa -->
+    <a href="#" onclick="showFullURL()">Mostrar URL completa</a>
+    <br><br>
+
+    <!-- Enlace para preguntar por una dirección y activarla -->
+    <a href="#" onclick="askForURL()">Ir a una URL</a>
+    <br><br>
+
+    <!-- Enlace para mostrar el protocolo actual -->
+    <a href="#" onclick="showProtocol()">Mostrar protocolo actual</a>
+    <br><br>
+
+    <!-- Enlace para recargar la página -->
+    <a href="#" onclick="reloadPage()">Recargar página</a>
+
+    <!-- Marcador -->
+    <div id="marker" class="marker">
+        <a href="#" onclick="alert('Has llegado al marcador')">¡Has llegado al marcador! Haz clic aquí para mostrar el mensaje.</a>
+    </div>
+
+    <script>
+        // a) Desplazarse hasta un marcador.
+        document.getElementById('goToMarker').addEventListener('click', function(event) {
+            event.preventDefault();
+            window.location.hash = '#marker';
+        });
+
+        // b) Mostrar el nombre del host actual.
+        function showHost() {
+            alert('El nombre del host es: ' + window.location.hostname);
+        }
+
+        // c) Mostrar la URL completa de la página.
+        function showFullURL() {
+            alert('La URL completa es: ' + window.location.href);
+        }
+
+        // d) Preguntar por una dirección y abrirla en el navegador.
+        function askForURL() {
+            let url = prompt('Introduce la URL a la que quieres ir:', 'https://');
+            if (url) {
+                window.location.href = url;
+            }
+        }
+
+        // e) Mostrar el protocolo de la página.
+        function showProtocol() {
+            alert('El protocolo utilizado es: ' + window.location.protocol);
+        }
+
+        // f) Recargar la página.
+        function reloadPage() {
+            location.reload();
+        }
+    </script>
+
+</body>
+</html>
