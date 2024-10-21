@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Operaciones con Arrays</title>
+    <script>
+        function realizarOperaciones() {
+            // Definir los dos arrays de palabras
+            let array1 = ["manzana", "pera", "plátano", "naranja", "uva"];
+            let array2 = ["plátano", "kiwi", "uva", "sandía", "mango"];
+
+            // Intersección: Elementos comunes en ambos arrays
+            let interseccion = array1.filter(palabra => array2.includes(palabra));
+
+            // Unión: Todos los elementos sin duplicados
+            let union = [...new Set(array1.concat(array2))];
+
+            // Diferencia: Elementos que están en array1 pero no en array2
+            let diferencia = array1.filter(palabra => !array2.includes(palabra));
+
+            // Mostrar los resultados
+            alert("Intersección: " + interseccion.join(", "));
+            alert("Unión: " + union.join(", "));
+            alert("Diferencia (array1 - array2): " + diferencia.join(", "));
+        }
+    </script>
+</head>
+<body>
+    <h1>Operaciones con Arrays de Palabras</h1>
+    <button onclick="realizarOperaciones()">Realizar operaciones</button>
+</body>
+</html>

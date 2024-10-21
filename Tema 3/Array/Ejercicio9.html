@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Información de la Cadena</title>
+    <script>
+        function procesarTexto() {
+            // Solicitar al usuario que introduzca una cadena de texto
+            const cadena = prompt("Introduce una cadena de texto:");
+
+            // Comprobar que se ha introducido texto
+            if (cadena) {
+                // Regenerar el array de palabras utilizando split
+                const palabras = cadena.split(' ').map(palabra => palabra.trim()).filter(palabra => palabra !== '');
+
+                // Obtener la información solicitada
+                const numeroDePalabras = palabras.length;
+                const primeraPalabra = palabras[0];
+                const ultimaPalabra = palabras[palabras.length - 1];
+                const palabrasInversas = palabras.reverse().join(' ');
+                const palabrasOrdenadasAZ = [...palabras].sort().join(', ');
+                const palabrasOrdenadasZA = [...palabras].sort().reverse().join(', ');
+
+                // Crear una cadena para mostrar la información
+                const resultado = `
+                    Número de palabras: ${numeroDePalabras}
+                    Primera palabra: ${primeraPalabra}
+                    Última palabra: ${ultimaPalabra}
+                    Palabras en orden inverso: ${palabrasInversas}
+                    Palabras ordenadas de la A a la Z: ${palabrasOrdenadasAZ}
+                    Palabras ordenadas de la Z a la A: ${palabrasOrdenadasZA}
+                `;
+
+                // Mostrar la información en una nueva ventana
+                const nuevaVentana = window.open("", "Resultado", "width=400,height=300");
+                nuevaVentana.document.write("<pre>" + resultado + "</pre>");
+                nuevaVentana.document.close();
+            } else {
+                alert("No se ha introducido texto.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <button onclick="procesarTexto()">Introducir Texto</button>
+</body>
+</html>

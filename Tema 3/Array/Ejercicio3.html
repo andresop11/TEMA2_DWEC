@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Generar N Números Aleatorios</title>
+    <script>
+        function generarNumeros() {
+            // Crear un array vacío
+            let numeros = [];
+
+            // Pedir al usuario el número N
+            let N = parseInt(prompt("Introduce cuántos números aleatorios deseas generar:"));
+
+            // Verificar que el valor N sea un número válido
+            if (isNaN(N) || N <= 0) {
+                alert("Por favor introduce un número válido mayor que 0.");
+                return;
+            }
+
+            // Generar N números aleatorios y guardarlos en el array
+            for (let i = 0; i < N; i++) {
+                let numeroAleatorio = Math.floor(Math.random() * 101); // Números entre 0 y 100
+                numeros.push(numeroAleatorio);
+            }
+
+            // Mostrar los números generados
+            alert("Los números aleatorios generados son: " + numeros.join(", "));
+        }
+    </script>
+</head>
+<body>
+    <h1>Generador de Números Aleatorios</h1>
+    <button onclick="generarNumeros()">Generar Números</button>
+</body>
+</html>

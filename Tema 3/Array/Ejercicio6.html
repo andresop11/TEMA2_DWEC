@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscar Palabra en el Documento</title>
+    <script>
+        function buscarPalabra() {
+            // Solicitar la palabra o texto al usuario
+            let palabra = prompt("Introduce una palabra o cadena de texto a buscar:");
+
+            // Comprobar si el usuario ingresó algo
+            if (palabra === null || palabra === "") {
+                alert("No has introducido ninguna palabra.");
+                return;
+            }
+
+            // Obtener el contenido del documento (todos los textos de los párrafos)
+            let contenido = document.body.innerText;
+
+            // Comprobar si la palabra existe en el contenido (sin diferenciar mayúsculas/minúsculas)
+            if (contenido.toLowerCase().includes(palabra.toLowerCase())) {
+                alert("La palabra o cadena '" + palabra + "' se encuentra en el documento.");
+            } else {
+                alert("La palabra o cadena '" + palabra + "' no se encuentra en el documento.");
+            }
+        }
+    </script>
+</head>
+<body>
+    <h1>Página con Párrafos de Ejemplo</h1>
+
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vestibulum enim non eros vehicula, vel facilisis justo aliquam.</p>
+    <p>Curabitur interdum purus et libero convallis tincidunt. Fusce vitae felis ut mauris fringilla feugiat a vitae ligula.</p>
+    <p>Donec sollicitudin, dolor quis congue volutpat, orci libero dignissim purus, ac convallis turpis velit ac libero.</p>
+    <p>Aliquam erat volutpat. Nullam condimentum, eros vel euismod posuere, dui justo laoreet velit, sit amet fringilla risus enim ac metus.</p>
+
+    <!-- Botón que llama a la función buscarPalabra -->
+    <button onclick="buscarPalabra()">Buscar palabra</button>
+</body>
+</html>

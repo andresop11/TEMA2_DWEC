@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // Solicitar al usuario que ingrese nombres separados por comas
+        let nomb = prompt("Introduce los nombres de varias personas, separados por comas:");
+
+        // Verificar que se haya ingresado un valor
+        if (nomb) {
+            // Dividir la cadena en un array de nombres usando split
+            const nombresArray = nomb.split(',').map(nombre => nombre.trim());
+
+            // Ordenar el array de nombres
+            nombresArray.sort();
+
+            // Mostrar los nombres ordenados
+            console.log("Nombres ordenados:");
+            console.log(nombresArray.join(', '));
+        } else {
+            console.log("No se ingresaron nombres.");
+        }
+
+    </script>
+</body>
+
+</html>

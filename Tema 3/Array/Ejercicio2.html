@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+
+        function colorIgual() {
+            let colores = ["azul", "amarillo", "rojo", "verde", "cafe", "rosa"];
+
+            let colorUsuario = prompt("Introduceme un color en letra minuscula").toLowerCase();
+
+            if (colores.includes(colorUsuario)) {
+                alert("El color dado por el usuario está incluido en la lista de colores");
+            } else {
+                alert("El color dado por el usuario no está incluido en la lista de colores")
+            }
+
+        }
+    </script>
+
+    <button onclick="colorIgual()">Introduceme un color</button>
+
+</body>
+
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array de Números Aleatorios</title>
+    <script>
+        function generarArray() {
+            // Crear un array vacío
+            let numeros = [];
+
+            // Generar 20 números aleatorios enteros entre 0 y 100
+            for (let i = 0; i < 20; i++) {
+                let numeroAleatorio = Math.floor(Math.random() * 101); // Números de 0 a 100
+                numeros.push(numeroAleatorio);
+            }
+
+            // Mostrar el array generado
+            console.log("Array generado: " + numeros);
+
+            // Calcular el valor mínimo y máximo usando Math.min y Math.max
+            let valorMinimo = Math.min(...numeros);
+            let valorMaximo = Math.max(...numeros);
+
+            // Calcular el valor medio
+            let suma = 0;
+            for (let i = 0; i < numeros.length; i++) {
+                suma += numeros[i];
+            }
+            let valorMedio = suma / numeros.length;
+
+            // Mostrar los resultados
+            console.log("Valor mínimo: " + valorMinimo);
+            console.log("Valor máximo: " + valorMaximo);
+            console.log("Valor medio: " + valorMedio.toFixed(2)); // Limitar a 2 decimales
+        }
+    </script>
+</head>
+<body>
+    <h1>Generador de Números Aleatorios y Cálculos</h1>
+    <button onclick="generarArray()">Generar Array</button>
+</body>
+</html>

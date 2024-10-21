@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valores Mínimo, Máximo y Medio</title>
+    <script>
+        function solicitarNumeros() {
+            let numeros = [];
+
+            // Pedir 5 números al usuario y almacenarlos en un array
+            for (let i = 0; i < 5; i++) {
+                let num = parseFloat(prompt(`Introduce el número ${i + 1}:`));
+                numeros.push(num);
+            }
+
+            // Calcular el valor mínimo
+            let valorMinimo = Math.min(...numeros);
+
+            // Calcular el valor máximo
+            let valorMaximo = Math.max(...numeros);
+
+            // Calcular el valor medio (promedio)
+            let suma = numeros.reduce((acumulado, valor) => acumulado + valor, 0);
+            let valorMedio = suma / numeros.length;
+
+            // Mostrar los resultados
+            alert(`Valor mínimo: ${valorMinimo}\nValor máximo: ${valorMaximo}\nValor medio: ${valorMedio.toFixed(2)}`);
+        }
+    </script>
+</head>
+<body>
+    <h1>Calculadora de Mínimo, Máximo y Medio</h1>
+    <button onclick="solicitarNumeros()">Introducir números</button>
+</body>
+</html>
